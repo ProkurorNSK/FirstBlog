@@ -2,7 +2,7 @@
     require_once("database.php");
     require_once("models/articles.php");
 
-    $articles = articles_all();
+    $article = articles_get($_GET['id']);
 
-    include("views/articles.php");
+    include("views/article.php");
 ?>
