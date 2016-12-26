@@ -9,6 +9,7 @@
     <body>
         <div class="container">
             <h1>Мой первый блог</h1>
+            <a href="admin">Панель администратора</a>
             <div>
                 <?php foreach($articles as $a): ?>
                 <div class="article">
