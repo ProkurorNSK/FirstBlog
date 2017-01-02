@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html>
+<hmtl>
     <head>
-        <meta charset="utf8">
-        <title>Мой первый блог</title>
+        <meta charset="utf-8">
+        <title>Блог</title>
         <link rel="stylesheet" href="../style.css">
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
     </head>
     <body>
         <div class="container">
-            <h1>Мой первый блог</h1>
-            <div>
+            <!-- Header (navbar) -->
+            <nav class="navbar navbar-default">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <a id="blog" class="navbar-brand" href="../index.php">Блог</a>
+                    </div>
+                </div>
+            </nav> 
+            <!-- END Header (navbar) -->
+            <div id="addart">
                 <form method="post" action="index.php?action=<?=$_GET['action']?>&id=<?=$_GET['id']?>">
                     <label>
                         Название
-                        <input type="text" name="title" value="" class="form-item" autofocus required>
+                        <input type="text" name="title" value="<?=$article['title']?>" class="form-item" autofocus required>
                     </label>
                     <label>
                         Дата
-                        <input type="date" name="date" class="form-item" required>
+                        <input type="date" name="date" value="<?=$article['date']?>" class="form-item" required>
                     </label>
                     <label>
                         Содержимое
-                        <textarea name="content" class="form-item" required></textarea>
+                        <textarea class="form-item" name="content" required><?=$article['content']?></textarea>
                     </label>
                     <input type="submit" value="Сохранить" class="btn">
                 </form>
             </div>
             <footer>
-                <p>Мой первый блог<br>Copyright © 2016</p>
+                <p>
+                    Блог<br>Copyright &copy; 2016
+                </p>
             </footer>
         </div>
     </body>
-</html>
+</hmtl>
