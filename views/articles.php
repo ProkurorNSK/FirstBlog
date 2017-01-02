@@ -11,15 +11,13 @@
             <h1>Мой первый блог</h1>
             <a href="admin">Панель администратора</a>
             <div>
-                <?php foreach($articles as $a): ?>
-                <div class="article">
-                    <h3>
-                        <a href="article.php?id=<?=$a['id']?>"><?=$a['title']?></a>
-                    </h3>
-                    <em>Опубликовано: <?=$a['date']?></em>
-                    <p><?=$a['content']?></p>
-                </div>
-                <?php endforeach ?>
+                <?php foreach($articles as $article): ?>
+            <div class="article">
+                <h3><a href="article.php?id=<?=$article['id']?>"><?=$article['title']?></a></h3>
+                <em>Опубликованно: <?=$article['date']?></em>
+                <p><?=articles_intro($article['content'])?></p>
+            </div>
+            <?php endforeach ?>
             </div>
             <footer>
                 <p>Мой первый блог<br>Coryright &copy; 2016</p>
